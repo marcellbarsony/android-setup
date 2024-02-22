@@ -1,0 +1,9 @@
+[package]
+name = "android"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# https://github.com/cocool97/adb_client/issues
+# https://crates.io/crates/adb_client
+adb_client = "*"
