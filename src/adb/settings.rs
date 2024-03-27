@@ -21,9 +21,9 @@ pub mod setup {
             vec!["settings", "put", "global", "airplane_mode_on", "0"],
             vec!["settings", "put", "global", "airplane_mode_radios", "cell,bluetooth,uwb,wifi,wimax"],
             vec!["settings", "put", "global", "airplane_mode_toggleable_radios", "bluetooth,wifi"],
-            // DNS
-            vec!["settings", "put", "global", "private_dns_mode", "hostname"],
-            vec!["settings", "put", "global", "private_dns_specifier", "dns.adguard.com"], // TODO
+            // DNS [TODO]
+            // vec!["settings", "put", "global", "private_dns_mode", "hostname"],
+            // vec!["settings", "put", "global", "private_dns_specifier", "dns.adguard.com"],
             // Data roaming
             vec!["settings", "put", "global", "data_roaming", "1"],
             // More connection settings
@@ -46,6 +46,8 @@ pub mod setup {
             vec!["settings", "put", "system", "adjust_media_volume_only", "1"],
             // Audio volume warning
             vec!["settings", "put", "global", "audio_safe_volume_state", "0"],
+            // Multi audio focus
+            vec!["settings", "put", "system", "multi_audio_focus_enabled", "1"],
             // }}}
 
             // {{{ VIBRATION
@@ -134,8 +136,8 @@ pub mod setup {
             vec!["settings", "put", "global", "flip_font_style", "3"],
             vec!["settings", "put", "global", "font_size", "0"],
             vec!["settings", "put", "system", "font_scale", "1"],
-            // Screen zoom
-            vec!["settings", "put", "secure", "display_density_forced", "280"],
+            // Screen zoom [TODO]
+            // vec!["settings", "put", "secure", "display_density_forced", "280"],
             // Easy mode
             vec!["settings", "put", "system", "easy_mode_switch", "1"],
             // Edge panel
@@ -148,7 +150,7 @@ pub mod setup {
             vec!["settings", "put", "system", "active_edge_area", "1"],
             vec!["settings", "put", "system", "edge_handler_position_percent", "13"],
             // Screen timeout (ms)
-            vec!["settings", "put", "system", "screen_off_timeout", "600000"], // TODO
+            vec!["settings", "put", "system", "screen_off_timeout", "600000"], // TODO (60000)
             // Navigation bar
             vec!["cmd", "overlay", "enable", "com.android.internal.systemui.navbar.gestural"],
             vec!["settings", "put", "global", "navigation_bar_button_to_hide_keyboard", "0"],
@@ -297,10 +299,16 @@ pub mod setup {
             // {{{ GOOGLE
             // GMS tweak
             vec!["settings", "put", "global", "google_core_control", "0"],
-            // TODO
+            // {{{ TODO
             // https://www.macrodroidforum.com/index.php?threads/disable-google-high-accuracy-with-secure-settings.2497/
             // https://www.reddit.com/r/tasker/comments/b154a6/location_modes_on_android_9/
             vec!["settings", "put", "global", "assisted_gps_enabled", "0"],
+            // TODO
+            // adb shell settings put secure default_voice_input_method 0
+            // adb shell settings put secure smartspace 0
+            // adb shell settings put secure voice_recognition_service 0
+            // adb shell settings put global hotword_detection_enabled 0
+            // }}}
             // }}}
 
             // {{{ ADVANCED FEATURES
